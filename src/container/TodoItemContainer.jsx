@@ -36,22 +36,24 @@ const onUpdate = (id)=> dispatch(updateItem(id));
 <TodoItemContainerBlock>
     <h3>진행중</h3>
 {todos
-    .filter((todo)=>todo.done===false)
+    .filter((todo)=>todo.isDone===false)
     .map((todo)=>{
         return (
             <TodoItem 
+            key={todo.id}
             todo={todo} 
-            onDelete = {deleteItem} 
-            onUpdate = {updateItem} 
+            onDelete = {onDelete} 
+            onUpdate = {onUpdate} 
             />
         )
     })}
     <h3>완료!</h3>
     {todos
-    .filter((todo)=>todo.done===true)
+    .filter((todo)=>todo.isDone===true)
     .map((todo)=>{
         return (
             <TodoItem 
+            key={todo.id}
             todo={todo} 
             onDelete = {deleteItem} 
             onUpdate = {updateItem} 

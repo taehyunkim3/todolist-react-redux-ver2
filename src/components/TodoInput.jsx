@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useCallback, useState} from 'react'
+import { useDispatch } from 'react-redux';
 import { styled } from 'styled-components'
-
+import { v4 as uuidv4 } from 'uuid';
+import { addItem } from '../redux/modules/reducer';
 
 
 
@@ -41,12 +43,42 @@ button {
 `;
 
 
+
+
 const TodoInput = () => {
+const dispatch = useDispatch();
+
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+  const onChangeTitle = useCallback((e) => {
+    setTitle(e.target.value);
+  }, []);
+  
+  const onChangeBody = useCallback((e) => {
+    setBody(e.target.value);
+  }, []);
+  
+  const onSubmit = useCallback((e)=>{
+    const data = {
+      id: uuidv4(),
+      title,
+      body,
+      isDone: false,
+    }
+    !title || !body ? alert('내용을 입력하세요') : dispatch(addItem(data));
+    setTitle('');
+    setBody('');
+    e.preventDefault();
+  },[dispatch, title, body])
+  
+
+
+
   return (
     <TodoInputBlock>
-        <form>
-제목 : <input type='text'/><br/>
-내용 : <input type='text'/>
+        <form onSubmit={onSubmit}>
+제목 : <input type='text' value={title} onChange={onChangeTitle}/><br/>
+내용 : <input type='text'value={body} onChange={onChangeBody}/>
 <button type='submit'>등록하기</button>
         </form>
 

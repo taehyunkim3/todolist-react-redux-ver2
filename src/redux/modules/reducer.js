@@ -7,6 +7,7 @@ const DELETE_ITEM = 'todos/DELETE_ITEM'
 
 //action creators (변경하기 위해 담는 틀)
 export const addItem = (payload) => {
+    console.log('additem작동중', payload)
     return {
         type: ADD_ITEM,
         payload,
@@ -53,10 +54,14 @@ const initialState = [
 //reducer
 
 const reducer = (state = initialState, action) => {
+    console.log('reducer작동중')
     switch (action.type) {
         case ADD_ITEM:
+            console.log('add작동');
+            console.log(state)
             return [...state, action.payload];
         case UPDATE_ITEM:
+            console.log('update작동')
             return state.map(todo => {
                 if (todo.id !== action.payload.id) return todo;
                 return {
@@ -65,7 +70,9 @@ const reducer = (state = initialState, action) => {
                 };
             });
         case DELETE_ITEM:
-            return state.filter(todo => todo.id === action.payload.id);
+            console.log('delete작동중');
+            return state.filter(todo => todo.id !== action.payload.id)
+
         default:
             return state;
     }

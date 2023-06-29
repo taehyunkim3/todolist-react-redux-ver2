@@ -33,16 +33,18 @@ p{
 
 
 
-const TodoItem = ({todo, onDelete, onChange}) => {
+const TodoItem = ({todo, onDelete, onUpdate}) => {
 
 const navigate = useNavigate();
 
   return (
     <TodoItemBlock>
 
-            <p>1. </p>
+           <p> {todo.isDone? '✓' : null}</p>
             <p className='title' onClick={()=>{navigate(`/${todo.id}`)}}>{todo.title}</p>
-            <p className='done' onClick={()=>{onChange(todo.id)}}>완료하기!</p>
+            <p className='done' onClick={()=>{onUpdate(todo.id)}}>{
+              todo.isDone? '취소?' : '완료?'
+            }</p>
             <p className='delete' onClick={()=>{onDelete(todo.id)}}>지우기!</p>
 
     </TodoItemBlock>
