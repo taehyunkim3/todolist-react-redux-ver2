@@ -8,11 +8,13 @@ const TemplateBlock = styled.div`
   width: 70%;
   min-width: 670px;
   max-width: 1000px;
-  height: 1200px;
+  min-height: 400px;
+  margin-bottom: 30px;
   margin-top: 2rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index:1;
 
   .header {
     display: flex;
@@ -20,7 +22,7 @@ const TemplateBlock = styled.div`
     justify-content: center;
     height: 80px;
     width: 100%;
-    color: #afa78a;
+    color: black;
     background: #FADD60;
     background: -moz-linear-gradient(top, #FADD60 0%, #F9C303 100%);
     background: -webkit-linear-gradient(top, #FADD60 0%, #F9C303 100%);
@@ -34,6 +36,8 @@ const TemplateBlock = styled.div`
   }
 
 `;
+
+
 
 const TodoTemplate = ({ children }) => {
   return (

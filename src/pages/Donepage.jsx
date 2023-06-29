@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PageLink from '../components/PageLink';
 
-const DetailPage = () => {
+const DonePage = () => {
 
 const todos = useSelector(todos=>todos.todos);
 const param = useParams();
@@ -17,11 +17,7 @@ console.log(todo)
     <>
     <TodoTemplate>
  
-
-        <h1>제목 :{todo.title}</h1>
-        <h2>내용: {todo.body}</h2>
-        <p>{todo.id}</p>
-        <h2>{todo.isDone? '완료된 항목입니다!' : null}</h2>
+<h1>donepage</h1>
 
 <Link to='/'>돌아가기</Link>
     </TodoTemplate>
@@ -31,4 +27,4 @@ console.log(todo)
   )
 }
 
-export default DetailPage
+export default DonePage

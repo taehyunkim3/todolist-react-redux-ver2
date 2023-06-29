@@ -2,7 +2,7 @@ import React from 'react'
 import { styled } from 'styled-components'
 import TodoItem from '../components/TodoItem';
 import { useDispatch, useSelector } from 'react-redux';
-import{deleteItem, updateItem, addItem} from '../redux/modules/reducer'
+import{deleteItem, updateItem} from '../redux/modules/reducer'
 
 
 const TodoItemContainerBlock = styled.div`
