@@ -21,8 +21,8 @@ const PageLink = () => {
     const navigate=useNavigate();
   return (<LinkContainer>
   <DoneLink onClick={()=>{navigate('/done')}}>완료목록</DoneLink>
-  <DoneLink onClick={()=>{navigate('/done')}}>완료목록</DoneLink>
-  <DoneLink onClick={()=>{navigate('/done')}}>완료목록</DoneLink>
+  <DoneLink onClick={()=>{navigate('/done')}}>돌아가기</DoneLink>
+  <DoneLink onClick={()=>{navigate('/done')}}>할일목록</DoneLink>
   </LinkContainer>
 
   )
