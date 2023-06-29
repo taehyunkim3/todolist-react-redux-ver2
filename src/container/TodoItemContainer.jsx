@@ -27,8 +27,8 @@ const TodoItemContainer = () => {
 const dispatch = useDispatch();
 const todos = useSelector(todos=>todos.todos);
 
-const onDelete = (id)=> dispatch(deleteItem(id));
-const onUpdate = (id)=> dispatch(updateItem(id));
+const onDelete = (id)=> dispatch(deleteItem({id}));
+const onUpdate = (id)=> dispatch(updateItem({id}));
 
 
 
@@ -42,8 +42,8 @@ const onUpdate = (id)=> dispatch(updateItem(id));
             <TodoItem 
             key={todo.id}
             todo={todo} 
-            onDelete = {onDelete} 
-            onUpdate = {onUpdate} 
+            onDelete = {()=>{onDelete(todo.id)}} 
+            onUpdate = {()=>{onUpdate(todo.id)}} 
             />
         )
     })}
@@ -55,8 +55,8 @@ const onUpdate = (id)=> dispatch(updateItem(id));
             <TodoItem 
             key={todo.id}
             todo={todo} 
-            onDelete = {deleteItem} 
-            onUpdate = {updateItem} 
+            onDelete = {()=>{onDelete(todo.id)}} 
+            onUpdate = {()=>{onUpdate(todo.id)}} 
             />
         )
     })}

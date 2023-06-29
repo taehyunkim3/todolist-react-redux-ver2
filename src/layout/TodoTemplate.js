@@ -36,12 +36,12 @@ const TemplateBlock = styled.div`
 `;
 
 const TodoTemplate = ({ children }) => {
-    return (
-        <TemplateBlock>
-            <div className="header">My Todo List</div>
-            {children}
-        </TemplateBlock>
-    );
+  return (
+    <TemplateBlock>
+      <div className="header">My Todo List</div>
+      {children}
+    </TemplateBlock>
+  );
 };
 
 export default TodoTemplate;
