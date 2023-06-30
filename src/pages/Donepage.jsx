@@ -6,23 +6,17 @@ import PageLink from '../components/PageLink';
 
 const DonePage = () => {
 
-const todos = useSelector(todos=>todos.todos);
-const param = useParams();
-console.log(param.id)
-
-const todo = todos.find((a)=>a.id==param.id);
-console.log(todo)
+// const todos = useSelector(todos=>todos.todos);
+// const param = useParams();
+// const todo = todos.find((a)=>a.id==param.id);
 
   return (
     <>
-    <TodoTemplate>
- 
-<h1>donepage</h1>
-
-<Link to='/'>돌아가기</Link>
-    </TodoTemplate>
-    <PageLink/>
-    
+        <TodoTemplate>
+            <h1>donepage rhd</h1>
+            <Link to='/'>돌아가기</Link>
+        </TodoTemplate>
+        <PageLink/> 
     </>
   )
 }

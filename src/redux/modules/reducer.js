@@ -1,5 +1,3 @@
-import React from 'react'
-
 //action values
 const ADD_ITEM = 'todos/ADD_ITEM'
 const UPDATE_ITEM = 'todos/UPDATE_ITEM'
